@@ -1,0 +1,81 @@
+﻿@model Car_Location.Models.Car
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Car</h4>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Agency.Localization)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agency.Localization)
+            (<a href='@Url.Action("Details", "Agencies", new { id = Model.ID_Agency })'><!--
+               -->details<!--
+            --></a>)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model.Brand)
+            (<a href='@Url.Action("Details", "Models2", new { id = Model.ID_Car })'><!--
+               -->details<!--
+            --></a>)
+        
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Engine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Engine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mileage_Current)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mileage_Current)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date_MOT_due)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date_MOT_due)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Car }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

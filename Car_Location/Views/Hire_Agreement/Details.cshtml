@@ -1,0 +1,64 @@
+﻿@model Car_Location.Models.Hire_Agreement
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hire_Agreement</h4>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Car)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.Model.Brand)
+            (<a href='@Url.Action("Details", "Cars", new { id = Model.ID_Car })'><!--
+               -->details<!--
+            --></a>)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Full_Name)
+            (<a href='@Url.Action("Details", "Customers", new { id = Model.ID_Customer })'><!--
+               -->details<!--
+            --></a>)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rental_Start_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rental_Start_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rental_End_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rental_End_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rental_Mileage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rental_Mileage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Hire_Agreement }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

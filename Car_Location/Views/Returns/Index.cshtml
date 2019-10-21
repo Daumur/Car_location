@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Car_Location.Models.Return>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Agency.Localization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hire_Agreement.Rental_Start_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Checked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.New_Mileage_Current)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.New_Fault_Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agency.Localization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hire_Agreement.Rental_Start_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Checked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.New_Mileage_Current)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.New_Fault_Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Return }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Return }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Return })
+        </td>
+    </tr>
+}
+
+</table>

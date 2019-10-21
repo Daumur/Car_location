@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Car_Location.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImgPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agency.Localization)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Engine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mileage_Current)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_MOT_due)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href='@Url.Action("Details", "Cars", new { id = item.ID_Car })'><img src="@Html.DisplayFor(modelItem => item.ImgPath)"></a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agency.Localization)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Engine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mileage_Current)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_MOT_due)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_Car }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID_Car }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_Car })
+        </td>
+    </tr>
+}
+
+</table>

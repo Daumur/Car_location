@@ -1,0 +1,113 @@
+﻿#mainSection {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+}
+    #mainSection h4 {
+        display:block;
+        width:100%;
+        border-top: 1px solid #0086BA;
+        line-height:2rem;
+        border-bottom: 1px solid #0086BA;
+        text-align :center;
+    }
+
+#mainSection > div {
+    text-align:left;
+}
+
+    #mainSection > .table {
+        margin:auto;
+    }
+
+    #mainSection tbody {
+        border-spacing: 0px;
+        border-collapse: collapse;
+        padding: 0;
+        margin: 0;
+        display: block;
+    }
+        #mainSection tbody > tr {
+            border-style: none;
+            border-collapse: collapse;
+            display: table-row;
+            padding: 0;
+        }
+            #mainSection tbody > tr > th {
+                border-collapse: collapse;
+                padding: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            #mainSection tbody > tr > td {
+                border-collapse: collapse;
+                border-bottom: 1px solid grey;
+            }
+
+    #mainSection tbody > tr:first-child > th {
+        border-bottom: 1px solid grey;
+    }
+
+            #mainSection tbody > tr > td {
+                border-bottom: 1px solid #DCDCDC;
+            }
+
+.form-group {
+    height:2rem;
+    line-height:2rem;
+}
+.form-group > .control-label {
+    width: calc(49% - 5px);
+    display: inline-block;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.form-group > .col-md-10 {
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+}
+
+.form-group:last-child div {
+    border : none;
+    width: 100%;
+    text-align:center;
+}
+
+    .form-group:last-child div > input, .form-actions input[value=Delete] {
+        line-height: 1.5rem;
+        width: 20%;
+        border: none;
+        color: white;
+        background-color: #0086BA;
+    }
+
+
+input, select {
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.dl-horizontal > dt {
+    width: calc(50% - 6px);
+    display: inline-block;
+    text-align: right;
+    padding-right: 5px;
+    line-height: 2rem;
+    font-weight:bold;
+}
+
+.dl-horizontal > dd {
+    margin:0;
+    width: 49%;
+    display: inline-block;
+    text-align: left;
+    line-height: 2rem;
+}
+
+.field-validation-error {
+    font-size:0.9rem;
+    color:darkred;
+}

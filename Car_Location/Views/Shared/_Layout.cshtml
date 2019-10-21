@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <header>
+        <div>
+            <div style="float:left;">
+                <div>
+                    <a href='@Url.Action("Index", "Home")'>Home</a>
+                </div>
+                <div>
+                    <a href='@Url.Action("Contact", "Home")'>Contact</a>
+                </div>
+                <div>
+                    <a href='@Url.Action("Index", "Cars")'>Cars</a>
+                </div>
+                @{
+                    if (Session["ID_Customer"] != null || Session["ID_Staff"] != null)
+                    {
+                        <div>
+                            <a href='@Url.Action("Index", "Hire_Agreement")'>Hire agreement</a>
+                        </div>
+                    }
+                    if (Session["ID_Staff"] != null)
+                    {
+                        <div>
+                            <a href='@Url.Action("Index", "Returns")'>Return</a>
+                        </div>
+                    }
+                }
+            </div>
+        <div style="float:right;">
+            @{
+                if (Session["ID_Customer"] == null && Session["ID_Staff"] == null)
+                { 
+                    <div title="login">
+                        <a href='@Url.Action("Login", "Customers")'>Login</a>
+                    </div>
+                }
+                else
+                {
+                    <div title="disconnect">
+                        <a href='@Url.Action("Disconnect", "Customers")'>Disconnect</a>
+                    </div>
+                    <div title="manage account">
+                        <a href='@Url.Action("Edit", "Customers")'>Manage account</a>
+                    </div>
+                }
+            }
+            </div>
+        </div>
+    </header>
+
+
+    <section id="mainSection">
+        @RenderBody()
+
+    </section>
+
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Cars rental</p>
+    </footer>
+</body>
+</html>

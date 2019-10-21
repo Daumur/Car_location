@@ -1,0 +1,41 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align:center;
+    padding-top :3rem;
+}
+
+header {
+    height: 3rem;
+    line-height: 3rem;
+    background-color: #23282C;
+
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+    header > div {
+        width: 80%;
+        margin:auto;
+    }
+
+    header > div > div {
+        height: 3rem;
+    }
+
+        header > div > div > div {
+            display: inline-block;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+
+            header > div > div > div > a {
+                display: inline-block;
+                text-decoration: none;
+                color: white;
+            }
+
+                header > div > div > div > a:hover {
+                    color: grey;
+                }
